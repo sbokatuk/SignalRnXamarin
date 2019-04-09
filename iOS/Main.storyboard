@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cf0-PZ-6pv">
+                                <rect key="frame" x="20" y="182" width="374" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wY1-5c-8yF">
+                                <rect key="frame" x="20" y="124" width="288" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRl-py-Mlo">
+                                <rect key="frame" x="340" y="124" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="SendTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="naf-HM-giO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVM-XF-CZr">
+                                <rect key="frame" x="302" y="69" width="74" height="30"/>
+                                <state key="normal" title="Reconnect"/>
+                                <connections>
+                                    <action selector="ReconnectTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eS-10-Ghl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vRl-py-Mlo" secondAttribute="trailing" constant="38" id="5VC-61-l3E"/>
+                            <constraint firstItem="wY1-5c-8yF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="EQo-t3-jgZ"/>
+                            <constraint firstItem="vRl-py-Mlo" firstAttribute="centerY" secondItem="wY1-5c-8yF" secondAttribute="centerY" id="KhZ-d0-49O"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cf0-PZ-6pv" secondAttribute="bottom" constant="8" id="OlE-Z4-UzB"/>
+                            <constraint firstItem="kVM-XF-CZr" firstAttribute="trailing" secondItem="vRl-py-Mlo" secondAttribute="trailing" id="PWg-Cm-0hm"/>
+                            <constraint firstItem="cf0-PZ-6pv" firstAttribute="top" secondItem="wY1-5c-8yF" secondAttribute="bottom" constant="28" id="ZBy-WY-EJm"/>
+                            <constraint firstAttribute="trailing" secondItem="cf0-PZ-6pv" secondAttribute="trailing" constant="20" id="nAp-UF-JfI"/>
+                            <constraint firstItem="wY1-5c-8yF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vhe-kr-GRf"/>
+                            <constraint firstItem="cf0-PZ-6pv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vow-Bx-0g4"/>
+                            <constraint firstItem="vRl-py-Mlo" firstAttribute="top" secondItem="kVM-XF-CZr" secondAttribute="bottom" constant="25" id="yjN-Y2-yie"/>
+                            <constraint firstItem="vRl-py-Mlo" firstAttribute="leading" secondItem="wY1-5c-8yF" secondAttribute="trailing" constant="32" id="zn5-f4-tdK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="MessageText" destination="wY1-5c-8yF" id="IEV-jw-HBH"/>
+                        <outlet property="MessagesTable" destination="cf0-PZ-6pv" id="Ao0-7t-zjL"/>
+                        <outlet property="ReconnectButton" destination="kVM-XF-CZr" id="3hg-2b-gky"/>
+                        <outlet property="SendButton" destination="vRl-py-Mlo" id="Iqj-Tc-y6J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101.44927536231884" y="30.803571428571427"/>
+        </scene>
+    </scenes>
+</document>
